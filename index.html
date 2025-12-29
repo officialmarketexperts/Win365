@@ -21,76 +21,100 @@
 
 body{
     min-height:100vh;
-    background:radial-gradient(circle at top,#020617,#000 70%);
+    background:radial-gradient(circle at top,#020617,#000);
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     color:#fff;
 }
 
+/* CARD */
 .card{
     width:92%;
     max-width:440px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(18px);
-    border-radius:30px;
-    padding:36px 26px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(22px);
+    border-radius:32px;
+    padding:40px 26px;
     text-align:center;
-    box-shadow:0 30px 80px rgba(79,70,229,.4);
+    box-shadow:
+      0 40px 120px rgba(99,102,241,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.1);
 }
 
 /* LOGO */
 .logo{
     width:130px;
     height:130px;
-    margin:0 auto 18px;
+    margin:0 auto 20px;
     border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg,#2563eb,#ef4444);
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:
+      0 0 30px rgba(59,130,246,0.9),
+      0 0 70px rgba(239,68,68,0.7);
+    animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.06)}
+    100%{transform:scale(1)}
 }
 
 .logo img{
-    width:100%;
-    height:100%;
+    width:82%;
+    height:82%;
     border-radius:50%;
     object-fit:cover;
-    background:#000;
 }
 
 /* TITLE */
 h1{
     font-size:24px;
     font-weight:700;
-    margin-bottom:6px;
+    margin-bottom:8px;
     background:linear-gradient(90deg,#3b82f6,#ef4444,#3b82f6);
-    background-size:200% auto;
+    background-size:200%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:flow 3s linear infinite;
+    animation:gradientMove 3s linear infinite;
 }
 
-@keyframes flow{
-    to{background-position:200% center;}
+@keyframes gradientMove{
+    to{background-position:200%}
 }
 
 .sub{
     font-size:14px;
     color:#c7d2fe;
-    margin-bottom:26px;
+    margin-bottom:28px;
 }
 
 /* FEATURES */
 .features{
     text-align:left;
-    margin-bottom:30px;
+    margin-bottom:32px;
 }
 
 .feature{
     display:flex;
     align-items:center;
     gap:14px;
-    margin-bottom:15px;
     font-size:15px;
+    margin-bottom:16px;
+    animation:fadeUp .8s ease both;
+}
+
+.feature:nth-child(2){animation-delay:.1s}
+.feature:nth-child(3){animation-delay:.2s}
+.feature:nth-child(4){animation-delay:.3s}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(15px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 .feature i{
@@ -101,70 +125,84 @@ h1{
     align-items:center;
     justify-content:center;
     background:linear-gradient(135deg,#2563eb,#ef4444);
-    box-shadow:0 0 15px rgba(99,102,241,.9);
+    box-shadow:0 0 20px rgba(99,102,241,0.9);
+    animation:iconGlow 1.6s infinite alternate;
 }
 
-/* BUTTON */
-.btn{
+@keyframes iconGlow{
+    from{box-shadow:0 0 10px rgba(59,130,246,0.6)}
+    to{box-shadow:0 0 25px rgba(239,68,68,1)}
+}
+
+/* TELEGRAM BUTTON – RED + BLUE MIX */
+.telegram-btn{
     width:100%;
     padding:18px;
-    border:none;
-    border-radius:18px;
     font-size:16px;
     font-weight:600;
     color:#fff;
-    background:linear-gradient(135deg,#2563eb,#ef4444);
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(135deg,#2563eb,#ef4444,#2563eb);
     cursor:pointer;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     gap:12px;
-    box-shadow:0 0 30px rgba(239,68,68,.8);
+    box-shadow:0 0 40px rgba(239,68,68,.9);
+    animation:zoomPulse 1.4s infinite;
 }
 
-.btn i{font-size:20px;}
+@keyframes zoomPulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.06)}
+    100%{transform:scale(1)}
+}
 
+.telegram-btn i{
+    font-size:22px;
+}
+
+/* FOOTER */
 .stars{
-    margin:22px 0 6px;
+    margin:26px 0 6px;
     color:#facc15;
+}
+
+.rating{
+    font-size:13px;
+    color:#c7d2fe;
+    margin-bottom:18px;
 }
 
 .disclaimer{
     font-size:11.5px;
     color:#9ca3af;
     line-height:1.6;
-    margin-top:18px;
 }
 </style>
 
-<!-- ✅ META PIXEL (CORRECT) -->
+<!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init','2086155282203727');
 
-/* 🔒 PAGEVIEW – ONLY ONCE */
-if(!localStorage.getItem('pv_done')){
+/* PAGEVIEW – ONLY ONCE */
+if(!localStorage.getItem('pageview_fired')){
     fbq('track','PageView');
-    localStorage.setItem('pv_done','1');
+    localStorage.setItem('pageview_fired','yes');
 }
 </script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"/>
-</noscript>
-
 </head>
+
 <body>
 
 <div class="card">
@@ -177,34 +215,45 @@ src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"/>
     <div class="sub">Elite Trading Education • Premium Community</div>
 
     <div class="features">
-        <div class="feature"><i class="fa-solid fa-chart-line"></i> Market Education</div>
-        <div class="feature"><i class="fa-solid fa-chart-pie"></i> Nifty & BankNifty Analysis</div>
-        <div class="feature"><i class="fa-solid fa-shield-halved"></i> Risk Management</div>
-        <div class="feature"><i class="fa-solid fa-gem"></i> 100% Genuine Learning</div>
+        <div class="feature"><i class="fa-solid fa-chart-line"></i> Market Education & Chart Reading</div>
+        <div class="feature"><i class="fa-solid fa-chart-pie"></i> Nifty • BankNifty • Stocks</div>
+        <div class="feature"><i class="fa-solid fa-shield-halved"></i> Risk Management Strategy</div>
+        <div class="feature"><i class="fa-solid fa-gem"></i> No Fake Tips • Only Knowledge</div>
     </div>
 
-    <button class="btn" onclick="joinTelegram()">
+    <!-- TELEGRAM BUTTON -->
+    <button class="telegram-btn" onclick="joinTelegram()">
         <i class="fa-brands fa-telegram"></i>
         JOIN TELEGRAM CHANNEL
     </button>
 
     <div class="stars">
-        ★★★★★
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
     </div>
 
+    <div class="rating">Trusted by serious learners</div>
+
     <div class="disclaimer">
-        Educational purpose only. No tips, no guarantees.<br>
-        Trading involves risk.
+        Educational purpose only.<br>
+        Market participation involves risk.
     </div>
+
 </div>
 
 <script>
-function joinTelegram(){
+let telegramClicked = false;
 
-    /* 🔒 SUBSCRIBE EVENT – ONLY ONCE */
-    if(!localStorage.getItem('sub_done')){
+function joinTelegram(){
+    if(telegramClicked) return;
+    telegramClicked = true;
+
+    if(!localStorage.getItem('telegram_subscribed')){
         fbq('track','Subscribe');
-        localStorage.setItem('sub_done','1');
+        localStorage.setItem('telegram_subscribed','yes');
     }
 
     window.location.href = "https://t.me/+zrnr97SHlsAyYjZl";
