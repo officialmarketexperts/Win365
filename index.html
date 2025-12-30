@@ -7,6 +7,25 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- ================= META PIXEL CODE ================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2086155282203727');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"/>
+</noscript>
+<!-- ================= END META PIXEL ================= -->
+
 <style>
 *{
     margin:0;
@@ -33,7 +52,7 @@ body{
     box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* ================= LOGO + KING ICON ================= */
+/* ================= LOGO + KING ================= */
 .logo-wrap{
     width:120px;
     height:120px;
@@ -120,12 +139,9 @@ h1{
     align-items:center;
     justify-content:center;
     gap:10px;
-
-    animation:heartbeat 1.5s infinite,
-              btnGlow 2.5s infinite alternate;
+    animation:heartbeat 1.5s infinite, btnGlow 2.5s infinite alternate;
 }
 
-/* HEART BEAT */
 @keyframes heartbeat{
     0%{transform:scale(1);}
     25%{transform:scale(1.05);}
@@ -134,17 +150,14 @@ h1{
     100%{transform:scale(1);}
 }
 
-/* BUTTON GLOW */
 @keyframes btnGlow{
     0%{ box-shadow:0 0 10px rgba(79,70,229,0.5); }
     100%{ box-shadow:0 0 35px rgba(79,70,229,1); }
 }
 
-/* ================= TELEGRAM ICON ================= */
 .telegram-icon{
     font-size:22px;
-    animation:bounce 1.2s infinite,
-              iconGlow 2s infinite alternate;
+    animation:bounce 1.2s infinite, iconGlow 2s infinite alternate;
 }
 
 @keyframes bounce{
@@ -183,7 +196,6 @@ h1{
 
 <div class="card">
 
-    <!-- LOGO -->
     <div class="logo-wrap">
         <span class="king-crown">👑</span>
         <img src="https://uploads.onecompiler.io/446vwj75z/448qqnmcq/WhatsApp%20Image%202025-12-26%20at%2018.36.44.jpeg" alt="TRADE WITH MOHIT">
@@ -199,7 +211,6 @@ h1{
         <div class="feature">🎯 Learn with clarity, not false promises</div>
     </div>
 
-    <!-- TELEGRAM BUTTON -->
     <button class="telegram-btn" onclick="window.location.href='https://t.me/+zrnr97SHlsAyYjZl'">
         <span class="telegram-icon">✈️</span>
         JOIN TELEGRAM CHANNEL
