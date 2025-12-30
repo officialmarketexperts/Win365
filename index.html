@@ -33,7 +33,7 @@ body{
     box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* ================= LOGO GLOW ================= */
+/* ================= LOGO + KING ICON ================= */
 .logo-wrap{
     width:120px;
     height:120px;
@@ -43,6 +43,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+    position:relative;
     animation:logoGlow 3s infinite alternate;
 }
 
@@ -53,6 +54,26 @@ body{
 
 .logo-wrap img{
     width:85%;
+    border-radius:50%;
+}
+
+/* 👑 KING CROWN */
+.king-crown{
+    position:absolute;
+    top:-18px;
+    font-size:32px;
+    animation:crownFloat 1.8s infinite ease-in-out,
+             crownGlow 2.5s infinite alternate;
+}
+
+@keyframes crownFloat{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
+
+@keyframes crownGlow{
+    0%{ text-shadow:0 0 6px gold; }
+    100%{ text-shadow:0 0 18px orange; }
 }
 
 /* ================= TITLE ================= */
@@ -115,12 +136,8 @@ h1{
 
 /* BUTTON GLOW */
 @keyframes btnGlow{
-    0%{
-        box-shadow:0 0 10px rgba(79,70,229,0.5);
-    }
-    100%{
-        box-shadow:0 0 35px rgba(79,70,229,1);
-    }
+    0%{ box-shadow:0 0 10px rgba(79,70,229,0.5); }
+    100%{ box-shadow:0 0 35px rgba(79,70,229,1); }
 }
 
 /* ================= TELEGRAM ICON ================= */
@@ -130,13 +147,11 @@ h1{
               iconGlow 2s infinite alternate;
 }
 
-/* ICON BOUNCE */
 @keyframes bounce{
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-6px);}
 }
 
-/* ICON GLOW */
 @keyframes iconGlow{
     0%{text-shadow:0 0 6px rgba(255,255,255,0.6);}
     100%{text-shadow:0 0 16px rgba(255,255,255,1);}
@@ -162,23 +177,6 @@ h1{
     line-height:1.6;
 }
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2086155282203727');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -187,6 +185,7 @@ src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"
 
     <!-- LOGO -->
     <div class="logo-wrap">
+        <span class="king-crown">👑</span>
         <img src="https://uploads.onecompiler.io/446vwj75z/448qqnmcq/WhatsApp%20Image%202025-12-26%20at%2018.36.44.jpeg" alt="TRADE WITH MOHIT">
     </div>
 
@@ -201,7 +200,7 @@ src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"
     </div>
 
     <!-- TELEGRAM BUTTON -->
-    <button class="telegram-btn" onclick="window.location.href="https://t.me/+zrnr97SHlsAyYjZl">
+    <button class="telegram-btn" onclick="window.location.href='https://t.me/+zrnr97SHlsAyYjZl'">
         <span class="telegram-icon">✈️</span>
         JOIN TELEGRAM CHANNEL
     </button>
@@ -218,6 +217,3 @@ src="https://www.facebook.com/tr?id=2086155282203727&ev=PageView&noscript=1"
 
 </body>
 </html>
-
-
-
